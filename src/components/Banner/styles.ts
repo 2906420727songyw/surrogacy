@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-export const BannerContainer = styled.section<{ $bgImage: string }>`
+export const BannerContainer = styled.div<{ $bgImage: string }>`
   height: 100vh;
   width: 100%;
   position: relative;
@@ -14,16 +14,7 @@ export const BannerContainer = styled.section<{ $bgImage: string }>`
   transition: background-image 0.5s ease;
   padding: 0;
   margin: 0;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
-  }
+  color: #fff;
 `;
 
 export const BannerContent = styled.div`

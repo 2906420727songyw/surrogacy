@@ -3,24 +3,22 @@ import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.header`
   position: fixed;
-  top: 40px;
+  top: 0;
   left: 0;
-  right: 0;
-  padding: 1.2rem 3rem;
+  width: 100%;
+  height: 120px;
+  background-color: transparent;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
   z-index: 100;
-  background: transparent;
   transition: all 0.3s ease;
 
-  &.scrolled {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 0.8rem 3rem;
-  }
-
   @media (max-width: 768px) {
-    padding: 1rem 1.5rem;
+    height: 100px;
+    padding: 0 1.5rem;
   }
 `;
 
@@ -91,14 +89,6 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
   }
 `;
 
-export const TopBar = styled.div`
-  background-color: #A66E65;
-  height: 40px;
-  width: 100%;
-  z-index: 101;
-  margin: 0;
-`;
-
 export const Button = styled.button`
   background: none;
   border: none;
@@ -110,4 +100,12 @@ export const Button = styled.button`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+export const HeaderContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
 `; 
