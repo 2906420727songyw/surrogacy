@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { HeaderContainer, Logo, Nav, NavLink, MenuButton, Overlay, TopBar } from './styles';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { HeaderContainer, Logo, Nav, NavLink, MenuButton, Overlay, TopBar, Button } from './styles';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +38,7 @@ const Header = () => {
     <>
       <TopBar />
       <HeaderContainer className={scrolled ? 'scrolled' : ''}>
-        <Logo to="/">Sapling Surrogacy</Logo>
+        <Logo onClick={() => navigate('/')}>Sapling Surrogacy</Logo>
         <MenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? '✕' : '☰'}
         </MenuButton>
@@ -79,6 +80,10 @@ const Header = () => {
             职业生涯
           </NavLink>
         </Nav>
+        <div>
+          <Button>登入</Button>
+          <Button>搜索</Button>
+        </div>
       </HeaderContainer>
       <Overlay $isOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
     </>
