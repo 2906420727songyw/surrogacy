@@ -1,15 +1,17 @@
-import styled from 'styled-components';
 
-const Container = styled.div`
-  padding-top: 80px;
-  min-height: 100vh;
-`;
+import Banner from '@/components/Banner';
+import { Button } from './styles';
 
 const BecomeSurrogate = () => {
   return (
-    <Container>
-      <h1>成为代孕妈妈</h1>
-    </Container>
+    <Banner
+      title="成为代孕母亲"
+      subtitle="成为代孕妈妈，最高可获得105,000+美元"
+      bgImage="/images/banner2.jpg"
+    >
+      <Button>了解更多</Button>
+      <Button>申请成为代孕母亲</Button>
+    </Banner>
   );
 };
 

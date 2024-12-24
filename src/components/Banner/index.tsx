@@ -3,7 +3,6 @@ import {
   BannerContent,
   Title,
   Subtitle,
-  Button,
   GlobalAnimations
 } from './styles';
 
@@ -11,9 +10,10 @@ interface BannerProps {
   title: string;
   subtitle: string;
   bgImage: string;
+  children?: React.ReactNode;
 }
 
-const Banner: React.FC<BannerProps> = ({ title, subtitle, bgImage }) => {
+const Banner: React.FC<BannerProps> = ({ title, subtitle, bgImage, children }) => {
   return (
     <>
       <GlobalAnimations />
@@ -21,7 +21,7 @@ const Banner: React.FC<BannerProps> = ({ title, subtitle, bgImage }) => {
         <BannerContent>
           <Title>{title}</Title>
           <Subtitle>{subtitle}</Subtitle>
-          <Button>了解更多</Button>
+          {children}
         </BannerContent>
       </BannerContainer>
     </>
